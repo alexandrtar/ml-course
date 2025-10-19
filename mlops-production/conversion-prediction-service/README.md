@@ -44,6 +44,7 @@ python -m pytest tests/test_simple.py -v
 ```
 📡 API Endpoints
 Основные эндпоинты:
+
 GET / - Главная страница
 
 GET /health - Статус сервиса
@@ -84,9 +85,13 @@ curl -X POST "http://localhost:8000/predict" \
   }'
   ```
 🎯 Использование в продакшене
+
 Интеграция с веб-приложением:
+
 javascript
-// Пример JavaScript вызова
+
+Пример JavaScript вызова
+```bash
 async function predictConversion(sessionData) {
     const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
@@ -95,16 +100,14 @@ async function predictConversion(sessionData) {
         },
         body: JSON.stringify(sessionData)
     });
-    
     const result = await response.json();
-    
     if (result.conversion_prediction === 1) {
         // Показать персонализированное предложение
         showPersonalizedOffer();
     }
-    
     return result.conversion_probability;
 }
+```
 Мониторинг:
 ```bash
 # Проверка здоровья сервиса
@@ -114,12 +117,15 @@ curl http://localhost:8000/health
 curl http://localhost:8000/model/info
 ```
 📊 Ключевые фичи
+
 UTM параметры:
+
 utm_source_type - Тип источника (social, direct, organic, other)
 
 utm_medium - Тип канала (cpc, organic, referral)
 
 Device характеристики:
+
 device_category - Тип устройства (mobile, desktop, tablet)
 
 os_type - Операционная система
@@ -127,6 +133,7 @@ os_type - Операционная система
 device_browser - Браузер
 
 Временные фичи:
+
 day_of_week - День недели (0-6)
 
 hour_of_day - Час дня (0-23)
@@ -138,6 +145,7 @@ is_weekend - Выходной день
 is_peak_hours - Пиковые часы
 
 Поведенческие фичи:
+
 session_hits_count - Количество хитов в сессии
 
 unique_event_categories - Уникальные категории событий
@@ -149,10 +157,13 @@ unique_pages - Уникальные страницы
 is_returning_user - Возвращающийся пользователь
 
 Гео фичи:
+
 country_region - Регион страны (cis, europe, other)
 
 🔧 Технические детали
+
 Модель:
+
 Алгоритм: RandomForestClassifier
 
 Количество деревьев: 100
@@ -162,6 +173,7 @@ country_region - Регион страны (cis, europe, other)
 Балансировка классов: class_weight='balanced'
 
 Производительность:
+
 Время предсказания: < 100ms
 
 Поддержка batch запросов: Да
@@ -169,8 +181,10 @@ country_region - Регион страны (cis, europe, other)
 Память: ~500MB
 
 🛠️ Разработка
+
 Структура проекта:
-text
+
+```bash
 conversion-prediction-service/
 ├── 📁 models/           # Артефакты модели
 ├── 📁 notebooks/        # Jupyter ноутбуки анализа
@@ -179,7 +193,9 @@ conversion-prediction-service/
 ├── 📁 tests/           # Тесты
 ├── run_api.py          # Скрипт запуска
 └── requirements_simple.txt
+```
 Добавление новых фич:
+
 Обновите feature engineering в 02_feature_engineering.ipynb
 
 Переобучите модель в 03_model_training.ipynb
@@ -187,9 +203,11 @@ conversion-prediction-service/
 Обновите Pydantic схемы в src/api/main.py
 
 📝 Лицензия
+
 MIT License
 
 👥 Команда
+
 Data Science Team - СберАвтоподписка
 
 ## 🚀 Запуск проекта
@@ -200,21 +218,21 @@ python -m venv venv
 source venv/bin/activate  # Linux/Mac
 # или
 venv\Scripts\activate  # Windows
-Установите зависимости:
 ```
+2. Установите зависимости:
 ```bash
-pip install -r requirements_simple.txt
-Запустите ноутбуки для подготовки модели:
+pip install -r requirements.txt
 ```
+3. Запустите ноутбуки для подготовки модели:
 ```bash
 jupyter notebook notebooks/01_ga_data_analysis.ipynb
 # затем последовательно 02, 03, 04
-Запустите API:
 ```
+4. Запустите API:
 ```bash
 python run_api.py
-Протестируйте:
 ```
+5. Протестируйте:
 ```bash
 python -m pytest tests/test_simple.py -v
 ```
