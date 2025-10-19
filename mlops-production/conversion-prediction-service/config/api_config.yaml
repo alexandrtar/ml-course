@@ -1,0 +1,41 @@
+api:
+  name: "GA Conversion Prediction API"
+  version: "1.1.0"
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  log_level: "info"
+
+model:
+  path: "models/conversion_model.pkl"
+  label_encoders_path: "models/label_encoders.pkl"
+  feature_info_path: "models/feature_info.pkl"
+  optimal_threshold: 0.5045
+
+features:
+  categorical:
+    - "utm_source_type"
+    - "utm_medium"
+    - "device_category"
+    - "os_type"
+    - "device_browser"
+    - "time_of_day"
+    - "event_category_group"
+    - "country_region"
+  numerical:
+    - "day_of_week"
+    - "hour_of_day"
+    - "hour_sin"
+    - "hour_cos"
+    - "is_weekend"
+    - "month"
+    - "is_peak_hours"
+    - "session_hits_count"
+    - "unique_event_categories"
+    - "unique_event_actions"
+    - "unique_pages"
+    - "is_returning_user"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
