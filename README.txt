@@ -361,13 +361,16 @@ Advanced computer vision applications in healthcare
 
 Large-scale distributed training systems
 
-Edge AI and mobile ML deployment
-
 <div align="center">
-📫 Connect with Me
-<a href="https://t.me/sasha4828">Профиль telegram</a>
-<a href="https://hh.ru/resume/98e942f5ff0d48de1b0039ed1f30466f676671">Резюме hh.ru</a>
-<a href="mailto:alexandrtarasov1996@gmail.com">Написать мне на почту</a>
-"Turning complex problems into elegant ML solutions"
+
+# Edge AI and mobile ML deployment
+
+**"Turning complex problems into elegant ML solutions"**
+
+📫 **Connect with Me**
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/sasha4828)
+[![HeadHunter](https://img.shields.io/badge/HeadHunter-FF7043?style=for-the-badge&logo=hh.ru&logoColor=white)](https://hh.ru/resume/98e942f5ff0d48de1b0039ed1f30466f676671)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alexandrtarasov1996@gmail.com)
 
 </div>
