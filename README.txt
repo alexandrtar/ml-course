@@ -1,101 +1,98 @@
 🎯 ML Course - Production Machine Learning Projects
 Коллекция продвинутых проектов по машинному обучению с фокусом на production-реализацию и MLOps практики.
-=============================================================================================================================
 
-## 🏆 Projects Portfolio
-=============================================================================================================================
+🏆 Projects Portfolio
+🤖 Reinforcement Learning
+🟢 Mastering Taxi-v3 with Advanced Q-Learning - Reinforcement learning agent with intelligent exploration strategies
 
-### 🤖 Reinforcement Learning
+👁️ Computer Vision
+🟢 Deep Learning for Fashion-MNIST - From linear models to multi-layer perceptrons on fashion dataset
 
-🟢 **Mastering Taxi-v3 with Advanced Q-Learning** - Reinforcement learning agent with intelligent exploration strategies
+🟢 UNet for Medical Segmentation & YOLO for Human Instance Segmentation - Advanced segmentation projects
+🏆 Key Achievement: Real-time human instance segmentation with YOLOv8 achieving 86.8% detection confidence and 43.8% mask coverage
 
-### 👁️ Computer Vision
+🟢 Transfer Learning Benchmark for Car Classification - ResNet fine-tuning vs custom CNN comparative analysis
 
-🟢 **Deep Learning for Fashion-MNIST** - From linear models to multi-layer perceptrons on fashion dataset
+🟢 Generative AI: GANs vs VAEs for Face Generation - Comparative study of generative models
 
-🟢 **UNet for Medical Segmentation & YOLO for Instance Segmentation** - Medical image analysis and human detection
+📊 Natural Language Processing
+🟢 Hybrid BiLSTM-Transformer for Movie Genre Classification - Advanced architecture for multi-label classification
 
-🟢 **Transfer Learning Benchmark for Car Classification** - ResNet fine-tuning vs custom CNN comparative analysis
+🚀 MLOps & Engineering
+🟢 End-to-End ML Pipeline: Conversion Prediction Service - Production-ready service with FastAPI deployment
 
-🟢 **Generative AI: GANs vs VAEs for Face Generation** - Comparative study of generative models
+🟢 YOLO Human Instance Segmentation on COCO - Real-time segmentation pipeline with comprehensive evaluation
 
-### 📊 Natural Language Processing
+🔴 Real-Time Fraud Detection MLOps Pipeline - Planned: Airflow, MLflow, Kubernetes
 
-🟢 **Hybrid BiLSTM-Transformer for Movie Genre Classification** - Advanced architecture for multi-label classification
+🔴 Scalable Model Serving with CI/CD - Planned: Microservices, auto-scaling, monitoring
 
-### 🚀 MLOps & Engineering
+💡 Multi-Modal & Business Applications
+🟢 Multi-Modal Product Success Prediction - Combining visual embeddings and tabular features
 
-🎯 **End-to-End ML Pipeline: Conversion Prediction Service** - CURRENT PROJECT: Production-ready service with FastAPI deployment
+🔴 Real-Time Recommendation with Spark Streaming - Planned: PySpark, streaming architecture
 
-🔴 **Real-Time Fraud Detection MLOps Pipeline** - Planned: Airflow, MLflow, Kubernetes
+🔴 Time Series Forecasting for Energy Demand - Planned: SARIMAX, Prophet, LSTM ensembles
 
-🔴 **Scalable Model Serving with CI/CD** - Planned: Microservices, auto-scaling, monitoring
+🏆 Key Results & Metrics
+Computer Vision
+Car Classification: 99.38% accuracy, ResNet18 fine-tuning
 
-### 💡 Multi-Modal & Business Applications
+Medical Segmentation: 0.92 Dice coefficient, UNet architecture
 
-🟢 **Multi-Modal Product Success Prediction** - Combining visual embeddings and tabular features
+Human Instance Segmentation: 86.8% detection confidence, 43.8% mask coverage, YOLOv8 on COCO
 
-🔴 **Real-Time Recommendation with Spark Streaming** - Planned: PySpark, streaming architecture
+Face Generation: 28.4 FID score, GAN vs VAE comparison
 
-🔴 **Time Series Forecasting for Energy Demand** - Planned: SARIMAX, Prophet, LSTM ensembles
+Fashion-MNIST: 92.1% accuracy with custom CNN
 
-## 🏆 Key Results & Metrics
-=============================================================================================================================
+NLP & Multi-Modal
+Movie Genre Classification: 0.87 F1-score, BiLSTM-Transformer hybrid
 
-### Computer Vision
-- **Car Classification**: 99.38% accuracy, ResNet18 fine-tuning
-- **Medical Segmentation**: 0.92 Dice coefficient, UNet architecture  
-- **Face Generation**: 28.4 FID score, GAN vs VAE comparison
-- **Fashion-MNIST**: 92.1% accuracy with custom CNN
+Product Success Prediction: 0.89 ROC-AUC, visual + tabular features
 
-### NLP & Multi-Modal
-- **Movie Genre Classification**: 0.87 F1-score, BiLSTM-Transformer hybrid
-- **Product Success Prediction**: 0.89 ROC-AUC, visual + tabular features
+MLOps & Engineering
+Conversion Prediction: 0.996 F1-score, FastAPI + Docker deployment
 
-### MLOps & Engineering
-- **Conversion Prediction**: 0.996 F1-score, FastAPI + Docker deployment
-- **Reinforcement Learning**: 8.7 average reward, Q-Learning with exploration
+Reinforcement Learning: 8.7 average reward, Q-Learning with exploration
 
-## 💡 Technical Innovations
-=============================================================================================================================
+💡 Technical Innovations
+Architecture Designs
+Hybrid BiLSTM-Transformer for multi-label text classification
 
-### Architecture Designs
-- **Hybrid BiLSTM-Transformer** for multi-label text classification
-- **Comparative GANs vs VAEs** analysis for image generation
-- **Transfer Learning Benchmark** systematic evaluation framework
-- **Multi-Modal Fusion** techniques for combining vision and tabular data
+YOLO-based Instance Segmentation for real-time human detection
 
-### Engineering Solutions
-- **Modular MLOps Pipeline** with experiment tracking and model serving
-- **Production-Ready APIs** with comprehensive monitoring
-- **Containerized Deployment** with Docker and orchestration
+Comparative GANs vs VAEs analysis for image generation
 
-## 🏗️ System Architecture Patterns
-=============================================================================================================================
+Transfer Learning Benchmark systematic evaluation framework
 
-### MLOps Pipeline
+Multi-Modal Fusion techniques for combining vision and tabular data
+
+Engineering Solutions
+Modular MLOps Pipeline with experiment tracking and model serving
+
+Production-Ready APIs with comprehensive monitoring
+
+Containerized Deployment with Docker and orchestration
+
+Real-time Inference optimization for computer vision tasks
+
+🏗️ System Architecture Patterns
+MLOps Pipeline
+text
 Data Collection → Feature Engineering → Model Training → Validation → Deployment → Monitoring
-
+Microservices ML
 text
-
-### Microservices ML
 API Gateway → Model Service → Feature Store → Monitoring → Logging
-
+Comparative Analysis Framework
 text
-
-### Comparative Analysis Framework
 Baseline Models → Advanced Architectures → Hyperparameter Tuning → Results Benchmarking
-
-text
-
-## 🛠️ Technical Stack
-=============================================================================================================================
-
-### Machine Learning
-```python
+🛠️ Technical Stack
+Machine Learning
+python
 # Deep Learning
 TensorFlow, PyTorch, Keras
-CNN, RNN, LSTM, Transformer, GAN, VAE
+CNN, RNN, LSTM, Transformer, GAN, VAE, YOLO
 
 # Classical ML
 Scikit-learn, XGBoost, LightGBM
@@ -118,8 +115,6 @@ Feature engineering, Data pipelines
 MLflow, Weights & Biases
 Hyperparameter optimization
 🔧 Technical Implementation Highlights
-=============================================================================================================================
-
 Code Quality
 Modular Design: Separation of data, models, training, and evaluation
 
@@ -138,41 +133,36 @@ Logging: Structured logging for debugging and monitoring
 
 Scalability: Batch processing support, async operations
 
-🎯 Current Focus: Conversion Prediction Service
-=============================================================================================================================
-
+🎯 Current Focus: Human Instance Segmentation
 🏗️ Architecture
 text
-Google Analytics → Feature Engineering → RandomForest → FastAPI → Docker
+COCO Dataset → YOLOv8 Segmentation → Mask Processing → Evaluation → Visualization
 📊 Results
-ROC-AUC: 1.0
+Detection Confidence: 86.8% for person recognition
 
-F1-Score: 0.996
+Mask Coverage: 43.8% on complex scenes
 
-Precision: 0.993
+Inference Time: ~80ms per image
 
-Recall: 0.999
+Multi-class Detection: Persons, vehicles, objects
 
 🚀 Quick Start
 bash
-cd conversion-prediction-service
+cd human-segmentation-coco
 
 # Installation
 pip install -r requirements.txt
 
-# Run the service
-python run_api.py
+# Run demo
+python quick_demo.py
 
-# Test endpoints
-curl http://localhost:8000/health
-curl http://localhost:8000/model/info
+# Run full pipeline
+python main.py --num_images 3
 📈 Skills Development Roadmap
-=============================================================================================================================
-
 ✅ Completed Expertise
-Deep Learning Architectures: CNN, RNN, GAN, VAE, Transformers
+Deep Learning Architectures: CNN, RNN, GAN, VAE, Transformers, YOLO
 
-Computer Vision: Classification, Segmentation, Object Detection
+Computer Vision: Classification, Segmentation, Object Detection, Instance Segmentation
 
 NLP: Transformer architectures, multi-label classification
 
@@ -199,8 +189,6 @@ Advanced Monitoring: A/B testing, canary deployments
 CI/CD for ML: Automated testing, model registry
 
 📚 Learning Journey
-=============================================================================================================================
-
 Phase 1: Foundations ✅
 Statistical learning theory and model evaluation
 
@@ -209,7 +197,7 @@ Traditional ML algorithms and feature engineering
 Neural networks fundamentals and optimization
 
 Phase 2: Advanced ML ✅
-Deep Learning architectures (CNN/RNN/Transformers)
+Deep Learning architectures (CNN/RNN/Transformers/YOLO)
 
 Computer Vision and NLP state-of-the-art
 
@@ -230,8 +218,6 @@ Cloud Native ML: Kubernetes, serverless, cloud platforms
 Real-time ML: Streaming architectures, online learning
 
 💼 Business Impact & Applications
-=============================================================================================================================
-
 E-commerce & Retail
 Conversion rate optimization through predictive modeling
 
@@ -239,28 +225,43 @@ Product recommendation and personalization systems
 
 Visual search and product classification
 
+Customer behavior analysis
+
 Healthcare & Biomedicine
 Medical image analysis for diagnostics
 
 Patient outcome prediction models
+
+Instance segmentation for anatomical structures
 
 Media & Entertainment
 Content classification and tagging automation
 
 Generative AI for content creation
 
+Object detection and tracking in videos
+
 Financial Services
 Fraud detection and risk assessment systems
 
 Customer behavior analysis and prediction
 
-📊 Performance Metrics
-=============================================================================================================================
+Document processing and analysis
 
+Security & Surveillance
+Real-time human detection and tracking
+
+Anomaly detection in video streams
+
+Multi-object tracking systems
+
+📊 Performance Metrics
 Model Quality
 Classification: Accuracy >95%, F1-score >0.9 across projects
 
 Segmentation: Dice coefficient >0.9 on medical images
+
+Object Detection: 86.8% confidence on real-world images
 
 Generation: FID scores competitive with state-of-the-art
 
@@ -271,36 +272,48 @@ System Reliability: 99%+ uptime in production deployments
 
 Code Quality: 85%+ test coverage, PEP8 compliance
 
-🏗️ Project Structure
-=============================================================================================================================
+Documentation: Comprehensive READMEs and API docs
 
+🏗️ Project Structure
 text
 ml-course/
 ├── 📁 conversion-prediction-service/     # MLOps & Engineering
 ├── 📁 computer-vision/                   # CV projects
-├── 📁 nlp-text-mining/                   # NLP projects  
-├── 📁 reinforcement-learning/            # RL projects
-├── 📁 generative-ai                      # AI projects 
-└── 📄 README.md                          # This file
+│   ├── 📁 human-segmentation-coco/      # YOLO Instance Segmentation
+│   ├── 📁 car-classification/           # Transfer Learning
+│   ├── 📁 medical-segmentation/         # UNet Medical Imaging
+│   └── 📁 generative-ai/                # GANs & VAEs
+├── 📁 nlp-text-mining/                  # NLP projects  
+├── 📁 reinforcement-learning/           # RL projects
+├── 📁 multi-modal/                      # Multi-modal projects
+└── 📄 README.md                         # This file
 🎖️ Achievements
-=============================================================================================================================
-
 8+ Production-Ready Projects covering major ML domains
 
 End-to-End Implementation from research to deployment
 
-Advanced Architectures including Transformers, GANs, Q-Learning
+Advanced Architectures including Transformers, GANs, YOLO, Q-Learning
 
 MLOps Practices with CI/CD, containerization, monitoring
 
-🔧 Installation & Usage
-=============================================================================================================================
+Real Business Applications across multiple industries
 
+🔧 Installation & Usage
 Prerequisites
 Python 3.8+
 
+Git
+
+Quick Start
 bash
-pip install -r conversion-prediction-service/requirements.txt
+# Clone repository
+git clone https://github.com/alexandrtar/ml-course.git
+cd ml-course
+
+# Setup specific project
+cd computer-vision/human-segmentation-coco
+pip install -r requirements.txt
+python quick_demo.py
 Running Projects
 Each project contains its own detailed README with:
 
@@ -315,7 +328,6 @@ Usage examples
 Results and metrics
 
 🤝 Contribution
-=============================================================================================================================
 This portfolio demonstrates progressive learning in machine learning with focus on production implementation. Projects are designed to showcase:
 
 Problem-Solving: Business-oriented ML applications
@@ -329,8 +341,33 @@ Continuous Learning: Evolving skills through challenging projects
 👨‍💻 Author
 Alexander - Machine Learning Engineer focused on production systems and MLOps.
 
+Specializations:
+
+Production Machine Learning Systems
+
+Computer Vision & Deep Learning
+
+MLOps & Model Deployment
+
+Real-time Inference Optimization
+
 📄 License
 MIT License - feel free to use these projects for learning and inspiration.
 
 🚀 Next Goals
 Building scalable MLOps platforms and real-time ML systems
+
+Advanced computer vision applications in healthcare
+
+Large-scale distributed training systems
+
+Edge AI and mobile ML deployment
+
+<div align="center">
+📫 Connect with Me
+<a href="https://t.me/sasha4828">Профиль telegram</a>
+<a href="https://hh.ru/resume/98e942f5ff0d48de1b0039ed1f30466f676671">Резюме hh.ru</a>
+<a href="mailto:alexandrtarasov1996@gmail.com">Написать мне на почту</a>
+"Turning complex problems into elegant ML solutions"
+
+</div>
