@@ -32,8 +32,9 @@ python success_demo.py
 
 # 4. Test full pipeline
 python working_main.py
+```
+```
 📁 Project Structure
-text
 human-segmentation-coco/
 ├── 📁 src/                    # Source code
 │   ├── data_loader.py        # COCO dataset handling
@@ -46,71 +47,80 @@ human-segmentation-coco/
 ├── success_demo.py          # Guaranteed working demo
 ├── working_main.py          # Main pipeline
 └── requirements.txt         # Dependencies
+```
 🛠️ Technical Implementation
+
 Core Features
-YOLOv8 Instance Segmentation: State-of-the-art real-time segmentation
+- YOLOv8 Instance Segmentation: State-of-the-art real-time segmentation
 
-COCO Dataset Integration: Standardized evaluation on 80+ object classes
+- COCO Dataset Integration: Standardized evaluation on 80+ object classes
 
-Comprehensive Metrics: IoU, Dice, Precision, Recall, F1-score
+- Comprehensive Metrics: IoU, Dice, Precision, Recall, F1-score
 
-Professional Visualization: Comparison plots with ground truth overlays
+- Professional Visualization: Comparison plots with ground truth overlays
 
 Architecture
-python
+```
 # Modular design pattern
 data_loader = COCODataLoader()           # Data pipeline
 segmentator = HumanSegmentator()         # Model inference
 evaluator = SegmentationEvaluator()      # Performance metrics
 visualizer = ResultsVisualizer()         # Output generation
+```
 📊 Validation Results
+
 ✅ Successful Demonstrations
-Bus Scene Detection:
 
-6 objects detected (persons, bus, skateboard)
+1.Bus Scene Detection:
 
-43.8% image coverage by segmentation masks
+* 6 objects detected (persons, bus, skateboard)
 
-High confidence scores (86.8% for persons)
+* 43.8% image coverage by segmentation masks
 
-Multiple Person Detection:
+* High confidence scores (86.8% for persons)
 
-3 persons detected with accessories
+2. Multiple Person Detection:
 
-38.5% mask coverage
+* 3 persons detected with accessories
 
-Consistent high-performance metrics
+* 38.5% mask coverage
+
+* Consistent high-performance metrics
 
 🎯 Technical Achievements
-IoU Score: 0.564 (on synthetic tests)
 
-Dice Coefficient: 0.721
+* IoU Score: 0.564 (on synthetic tests)
 
-Precision: 0.939
+* Dice Coefficient: 0.721
 
-F1-Score: 0.721
+* Precision: 0.939
+
+* F1-Score: 0.721
 
 💡 Business Applications
+
 Real-World Use Cases
-Surveillance & Security: Real-time human detection and tracking
 
-Retail Analytics: Customer movement and behavior analysis
+1.Surveillance & Security: Real-time human detection and tracking
 
-Autonomous Systems: Pedestrian detection for vehicles/robotics
+2.Retail Analytics: Customer movement and behavior analysis
 
-Sports Analytics: Player tracking and performance metrics
+3.Autonomous Systems: Pedestrian detection for vehicles/robotics
+
+4.Sports Analytics: Player tracking and performance metrics
 
 Industry Impact
-E-commerce: Customer behavior analysis
 
-Healthcare: Patient monitoring systems
+* E-commerce: Customer behavior analysis
 
-Smart Cities: Traffic and crowd management
+* Healthcare: Patient monitoring systems
 
-Entertainment: Augmented reality applications
+* Smart Cities: Traffic and crowd management
+
+* Entertainment: Augmented reality applications
 
 🔧 Technical Stack
-yaml
+```
 Machine Learning:
   - YOLOv8 Segmentation
   - PyTorch backend
@@ -125,43 +135,51 @@ Engineering:
   - Modular Python architecture
   - Configuration management
   - Automated testing
+```
 🎯 Innovation Highlights
+
 Technical Innovations
-End-to-End Pipeline: Complete from data loading to visualization
 
-Multi-Model Support: YOLO and Mask R-CNN architectures
+1.End-to-End Pipeline: Complete from data loading to visualization
 
-Professional Evaluation: Comprehensive metrics suite
+2.Multi-Model Support: YOLO and Mask R-CNN architectures
 
-Production Ready: Error handling and configuration management
+3.Professional Evaluation: Comprehensive metrics suite
+
+4.Production Ready: Error handling and configuration management
 
 Engineering Excellence
-Modular Design: Separated concerns for maintainability
 
-Configuration Driven: YAML-based experiment management
+* Modular Design: Separated concerns for maintainability
 
-Reproducible: Version control and dependency management
+* Configuration Driven: YAML-based experiment management
 
-Scalable: Batch processing capabilities
+* Reproducible: Version control and dependency management
+
+* Scalable: Batch processing capabilities
 
 📈 Performance Metrics
+
 Model Quality
-Detection Accuracy: >85% confidence on real images
 
-Segmentation Quality: 43.8% coverage on complex scenes
+* Detection Accuracy: >85% confidence on real images
 
-Multi-class Capability: Simultaneous detection of multiple object types
+* Segmentation Quality: 43.8% coverage on complex scenes
+
+* Multi-class Capability: Simultaneous detection of multiple object types
 
 Engineering Metrics
-Inference Speed: ~80ms per image
 
-Memory Efficiency: Optimized mask processing
+* Inference Speed: ~80ms per image
 
-Code Quality: Modular, documented, tested
+* Memory Efficiency: Optimized mask processing
+
+* Code Quality: Modular, documented, tested
 
 🚀 Getting Started
+
 For Developers
-python
+```
 from src.segmentation import HumanSegmentator
 from src.evaluation import SegmentationEvaluator
 
@@ -175,52 +193,60 @@ mask = segmentator.segment(image)
 
 # Evaluate results
 metrics = evaluator.evaluate_single(ground_truth_mask, mask)
+```
 For Researchers
-bash
+```
 # Experiment with different models
 python main.py --model_type yolo --conf_threshold 0.3
 
 # Batch processing
 python main.py --num_images 10 --config config/experiment.yaml
+```
 📚 Learning Outcomes
+
 Technical Skills Demonstrated
-Deep Learning: YOLO architecture and segmentation models
 
-Computer Vision: Instance segmentation techniques
+1.Deep Learning: YOLO architecture and segmentation models
 
-MLOps: End-to-end pipeline development
+2.Computer Vision: Instance segmentation techniques
 
-Software Engineering: Modular design and best practices
+3.MLOps: End-to-end pipeline development
+
+4.Software Engineering: Modular design and best practices
 
 Project Management
-Requirements Analysis: Business problem to technical solution
 
-Iterative Development: Progressive improvement cycles
+* Requirements Analysis: Business problem to technical solution
 
-Quality Assurance: Comprehensive testing and validation
+* Iterative Development: Progressive improvement cycles
 
-Documentation: Professional-grade project documentation
+* Quality Assurance: Comprehensive testing and validation
+
+* Documentation: Professional-grade project documentation
 
 🏗️ Future Enhancements
+
 Planned Features
-Real-time video processing
 
-Multi-model ensemble
+* Real-time video processing
 
-Web-based interface
+* Multi-model ensemble
 
-Cloud deployment
+* Web-based interface
 
-Advanced metrics (mAP, Panoptic Quality)
+* Cloud deployment
+
+* Advanced metrics (mAP, Panoptic Quality)
 
 Research Directions
-Transformer-based segmentation
 
-Few-shot learning adaptation
+* Transformer-based segmentation
 
-Domain adaptation techniques
+* Few-shot learning adaptation
 
-Edge device optimization
+* Domain adaptation techniques
+
+* Edge device optimization
 
 👨‍💻 Author
 Alexander - Machine Learning Engineer focused on production-ready computer vision systems.
