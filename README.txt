@@ -367,6 +367,8 @@ Large-scale distributed training systems
 
 ## 📫 Connect with Me
 
-- **Telegram**: [@sasha4828](https://t.me/sasha4828)
-- **HeadHunter**: [Мое резюме](https://hh.ru/resume/98e942f5ff0d48de1b0039ed1f30466f676671)  
-- **Email**: [alexandrtarasov1996@gmail.com](mailto:alexandrtarasov1996@gmail.com)
+| Platform | Link |
+|----------|------|
+| 📱 Telegram | [@sasha4828](https://t.me/sasha4828) |
+| 💼 HeadHunter | [Мое резюме](https://hh.ru/resume/98e942f5ff0d48de1b0039ed1f30466f676671) |
+| 📧 Email | [alexandrtarasov1996@gmail.com](mailto:alexandrtarasov1996@gmail.com) |
