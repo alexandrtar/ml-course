@@ -1,0 +1,23 @@
+# Human Instance Segmentation Configuration
+
+# Data settings
+data_dir: "coco"
+data_type: "train2017"
+num_images: 10
+target_size: [512, 512]
+
+# Model settings
+model_type: "yolo"  # yolo or mask_rcnn
+conf_threshold: 0.25
+device: "auto"
+
+# Evaluation settings
+metrics: ["iou", "dice", "precision", "recall", "f1_score"]
+
+# Output settings
+save_results: true
+results_dir: "results"
+save_visualizations: true
+
+# Experiment settings
+experiment_name: "human_segmentation_v1"
