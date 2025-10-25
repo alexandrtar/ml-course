@@ -1,0 +1,45 @@
+# Конфигурация эксперимента
+experiment:
+  name: "car_classification_benchmark"
+  num_epochs: 15
+  batch_size: 32
+  num_workers: 4
+  device: "auto"  # auto, cuda, cpu
+
+data:
+  train_path: "train"
+  test_path: "test_upload" 
+  validation_split: 0.2
+  image_size: [224, 224]
+
+models:
+  benchmark_models: ["resnet18", "resnet50", "efficientnet_b0", "custom_cnn"]
+  pretrained: True
+  
+training:
+  optimizer: "adamw"
+  base_lr: 0.001
+  weight_decay: 0.01
+  scheduler: "cosine"
+  
+  # Дифференциальные learning rates для transfer learning
+  lr_multipliers:
+    backbone: 0.1
+    intermediate: 0.5  
+    classifier: 1.0
+
+augmentation:
+  train:
+    horizontal_flip: 0.5
+    rotation: 15
+    brightness_contrast: 0.3
+    hue_saturation: 0.3
+    coarse_dropout: 0.3
+    
+  test:
+    resize: [224, 224]
+
+logging:
+  use_mlflow: true
+  experiment_name: "car_classification"
+  log_interval: 10
