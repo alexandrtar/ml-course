@@ -1,35 +1,50 @@
 🏥 Medical Image Segmentation with UNet
+===
+
 A production-ready system for medical image segmentation using UNet architecture and modern MLOps practices.
 
+---
 🎯 Features
-Production Ready: Modular architecture, testing, CI/CD
+===
 
-High Accuracy: Dice coefficient 0.78+, IoU 0.91+
+* Production Ready: Modular architecture, testing, CI/CD
 
-Scalable: Distributed training support
+* High Accuracy: Dice coefficient 0.78+, IoU 0.91+
 
-MLOps: Experiment tracking, monitoring, versioning
+* Scalable: Distributed training support
 
-Real-time Inference: Fast API deployment
+* MLOps: Experiment tracking, monitoring, versioning
 
+* Real-time Inference: Fast API deployment
+
+---
 📊 Performance Metrics
-Metric	Value
-Dice Coefficient	0.7811
-IoU Score	0.9147
-Inference Speed	~15ms/image
-Model Size	~50MB
-Parameters	31,042,369
-Training Time	~2 minutes (CPU)
+===
+| Metric |	Value |
+| Dice Coefficient	| 0.7811 |
+| IoU Score	| 0.9147 |
+| Inference Speed |	~15ms/image |
+| Model Size	| ~50MB |
+| Parameters	| 31,042,369 |
+| Training Time	| ~2 minutes (CPU) |
+
+---
+
 🚀 Quick Start
+===
+
 Prerequisites
-Python 3.8+
 
-PyTorch 2.0+
+* Python 3.8+
 
-CUDA (optional, for GPU acceleration)
+* PyTorch 2.0+
+
+* CUDA (optional, for GPU acceleration)
+  
+---
 
 Installation
-bash
+```
 # Clone repository
 git clone https://github.com/alexandrtar/ml-course.git
 cd ml-course/computer-vision/medical-image-segmentation
@@ -42,23 +57,41 @@ venv\Scripts\activate    # Windows
 
 # Install dependencies
 pip install -r requirements.txt
+```
+---
+
 Training
-bash
+```
 # Main training pipeline
 python run_fixed.py
+```
+---
+
 Demonstration
-bash
+```
+
 # Model demonstration
 python demo_final.py
+```
+---
+
 Evaluation
-bash
+```
 # Model evaluation
 python scripts/evaluate.py --model_path medical_unet_trained.pth --data_path medical_data/val
+```
+---
+
 🏗️ System Architecture
-text
+===
+```
 Data Collection → Preprocessing → UNet Model → Training → Validation → Deployment → Monitoring
+```
+
 📁 Project Structure
-text
+===
+
+```
 medical-image-segmentation/
 ├── 📄 run_fixed.py                 # 🎯 MAIN TRAINING SCRIPT
 ├── 📄 demo_final.py                # 📊 Model demonstration
@@ -75,122 +108,166 @@ medical-image-segmentation/
 ├── 📁 tests/                      # ✅ Test suite
 ├── 📁 notebooks/                  # 📓 Jupyter notebooks
 └── 📁 docs/                       # 📚 Documentation
+```
+---
+
 🔧 Technical Stack
+===
+
 Deep Learning & Frameworks
 
-PyTorch 2.0+
+* PyTorch 2.0+
 
-Torchvision
+* Torchvision
 
-CUDA support
+* CUDA support
 
-NumPy, Pandas
+* NumPy, Pandas
+
+---
 
 Computer Vision
 
-OpenCV
+* OpenCV
 
-Pillow (PIL)
+* Pillow (PIL)
 
-Albumentations
+* Albumentations
 
-scikit-image
+* scikit-image
+
+---
 
 MLOps & Deployment
 
-MLflow (Experiment tracking)
+* MLflow (Experiment tracking)
 
-Weights & Biases (Optional)
+* Weights & Biases (Optional)
 
-FastAPI (Web API)
+* FastAPI (Web API)
 
-Docker & Docker Compose
+* Docker & Docker Compose
+
+---
 
 Data Science & Utilities
 
-Matplotlib
+* Matplotlib
 
-Seaborn
+* Seaborn
 
-scikit-learn
+* scikit-learn
 
-tqdm
+* tqdm
+
+---
 
 Testing & Code Quality
 
-pytest
+* pytest
 
-Black (Code formatting)
+* Black (Code formatting)
 
-Flake8 (Linting)
+* Flake8 (Linting)
 
-pre-commit
+* pre-commit
+
+---
 
 🎯 Model Architecture
+===
+
 UNet Features
-Encoder-Decoder architecture with skip connections
 
-Batch Normalization for stable training
+* Encoder-Decoder architecture with skip connections
 
-Residual Connections for gradient flow
+* Batch Normalization for stable training
 
-Configurable depth and feature maps
+* Residual Connections for gradient flow
 
-Attention Gates (optional) for improved performance
+* Configurable depth and feature maps
+
+* Attention Gates (optional) for improved performance
+
+---
 
 Supported Loss Functions
-Dice Loss
 
-Cross-Entropy Loss
+* Dice Loss
 
-IoU Loss
+* Cross-Entropy Loss
 
-Focal Loss
+* IoU Loss
 
-Combined Loss (Weighted combination)
+* Focal Loss
+
+* Combined Loss (Weighted combination)
+
+---
 
 📊 Dataset
+===
+
 Synthetic Medical Data
-Automatically generated realistic medical images
 
-Multiple organ-like structures
+* Automatically generated realistic medical images
 
-Various shapes and sizes
+* Multiple organ-like structures
 
-Realistic noise and artifacts
+* Various shapes and sizes
+
+* Realistic noise and artifacts
+
+---
 
 Data Augmentation
-Horizontal/Vertical flips
 
-Random rotations
+* Horizontal/Vertical flips
 
-Elastic transformations
+* Random rotations
 
-Brightness/contrast adjustments
+* Elastic transformations
 
-Gaussian noise
+* Brightness/contrast adjustments
 
-Motion blur simulation
+* Gaussian noise
+
+* Motion blur simulation
+
+---
 
 🚀 Deployment
+===
+
 Local Deployment
-bash
+```
 # Start FastAPI server
 python inference/api.py --host 0.0.0.0 --port 8000
+```
+---
+
 Docker Deployment
-bash
+```
 # Build and run with Docker
 docker build -t medical-segmentation .
 docker run -p 8000:8000 medical-segmentation
+```
+---
+
 Kubernetes Deployment
-yaml
+```
 # Kubernetes deployment configuration available
 # in docs/DEPLOYMENT.md
+```
+---
+
 🤝 Contributing
+===
+
 We welcome contributions! Please see our Contributing Guide for details.
 
 Development Setup
-bash
+```
 # Install in development mode
 pip install -e .
 
@@ -199,108 +276,152 @@ pip install black flake8 pytest pre-commit
 
 # Setup pre-commit hooks
 pre-commit install
+```
+---
+
 Code Standards
-Follow PEP 8 guidelines
 
-Use type hints
+* Follow PEP 8 guidelines
 
-Write comprehensive docstrings
+* Use type hints
 
-Add tests for new features
+* Write comprehensive docstrings
+
+* Add tests for new features
 
 📄 License
+===
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+---
+
 👨‍💻 Author
+===
+
 Alexander Tarasov
 
-Machine Learning Engineer
+* Machine Learning Engineer
 
-Specializing in Production ML Systems
+* Specializing in Production ML Systems
 
-Focus: Computer Vision, MLOps, Model Deployment
+* Focus: Computer Vision, MLOps, Model Deployment
 
 Contact
+===
+
 📧 Email: alexandrtarasov1996@gmail.com
 
 📱 Telegram: @sasha4828
 
 💼 GitHub: alexandrtar
 
-🌐 LinkedIn: Alexander Tarasov
+---
 
 🎯 Key Achievements
+===
+
 Technical Excellence
-✅ End-to-end medical segmentation pipeline
 
-✅ Production-ready code quality
+* ✅ End-to-end medical segmentation pipeline
 
-✅ Comprehensive testing suite
+* ✅ Production-ready code quality
 
-✅ Modular and extensible architecture
+* ✅ Comprehensive testing suite
+
+* ✅ Modular and extensible architecture
+
+---
 
 Performance Metrics
-✅ High segmentation accuracy (Dice: 0.78+)
 
-✅ Fast inference speeds (<20ms)
+* ✅ High segmentation accuracy (Dice: 0.78+)
 
-✅ Efficient memory usage
+* ✅ Fast inference speeds (<20ms)
 
-✅ Scalable training pipeline
+* ✅ Efficient memory usage
+
+* ✅ Scalable training pipeline
+
+---
 
 MLOps Implementation
-✅ Experiment tracking with MLflow
 
-✅ Model versioning and registry
+* ✅ Experiment tracking with MLflow
 
-✅ Continuous integration
+* ✅ Model versioning and registry
 
-✅ Containerized deployment
+* ✅ Continuous integration
+
+* ✅ Containerized deployment
+
+---
 
 🔄 Project Roadmap
+===
+
 Completed ✅
-UNet architecture implementation
 
-Synthetic data generation
+* UNet architecture implementation
 
-Training pipeline
+* Synthetic data generation
 
-Model evaluation
+* Training pipeline
 
-Basic deployment
+* Model evaluation
+
+* Basic deployment
+
+---
 
 In Progress 🔄
-Advanced architectures (UNet++, Attention UNet)
+===
 
-Real medical dataset integration
+* Advanced architectures (UNet++, Attention UNet)
 
-Advanced augmentation techniques
+* Real medical dataset integration
 
-Hyperparameter optimization
+* Advanced augmentation techniques
+
+* Hyperparameter optimization
+
+---
 
 Planned 📅
-Multi-modal segmentation
+===
 
-3D medical image support
+* Multi-modal segmentation
 
-Federated learning capabilities
+* 3D medical image support
 
-Web-based annotation tool
+* Federated learning capabilities
+
+* Web-based annotation tool
+
+---
 
 📞 Support
-Documentation: Check the docs/ directory
+===
 
-Issues: GitHub Issues
+* Documentation: Check the docs/ directory
 
-Discussions: GitHub Discussions
+* Issues: GitHub Issues
 
-Email: Direct contact for urgent matters
+* Discussions: GitHub Discussions
+
+* Email: Direct contact for urgent matters
+
+---
 
 🙏 Acknowledgments
-Original UNet paper: U-Net: Convolutional Networks for Biomedical Image Segmentation
+===
 
-PyTorch community for excellent deep learning framework
+* Original UNet paper: U-Net: Convolutional Networks for Biomedical Image Segmentation
 
-Medical imaging research community
+* PyTorch community for excellent deep learning framework
+
+* Medical imaging research community
+
+ --- 
 
 "Transforming medical imaging challenges into AI-powered solutions" 🏥✨
