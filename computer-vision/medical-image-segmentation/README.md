@@ -405,10 +405,6 @@ Planned 📅
 
 * Documentation: Check the docs/ directory
 
-* Issues: GitHub Issues
-
-* Discussions: GitHub Discussions
-
 * Email: Direct contact for urgent matters
 
 ---
