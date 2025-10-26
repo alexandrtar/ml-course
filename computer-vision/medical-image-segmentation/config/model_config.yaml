@@ -1,0 +1,33 @@
+# UNet Configuration
+unet:
+  base_channels: 64
+  depth: 5
+  dropout: 0.2
+  normalization: "batch_norm"
+  activation: "relu"
+  use_attention: false
+
+# Attention UNet Configuration
+attention_unet:
+  base_channels: 64
+  depth: 5
+  dropout: 0.2
+  attention_channels: 32
+  normalization: "batch_norm"
+  activation: "relu"
+
+# ResUNet Configuration
+resunet:
+  base_channels: 64
+  depth: 5
+  dropout: 0.2
+  normalization: "batch_norm"
+  activation: "relu"
+  use_bottleneck: true
+
+# Model Zoo
+available_models:
+  - "unet"
+  - "attention_unet" 
+  - "resunet"
+  - "unet_plus_plus"

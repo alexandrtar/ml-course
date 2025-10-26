@@ -1,0 +1,37 @@
+# Inference Settings
+inference:
+  device: "auto"  # auto, cuda, cpu
+  batch_size: 1
+  confidence_threshold: 0.5
+  overlap_threshold: 0.3
+  
+  # Preprocessing
+  normalize: true
+  resize: true
+  target_size: [256, 256]
+  keep_aspect_ratio: false
+  
+  # Postprocessing
+  apply_threshold: true
+  threshold: 0.5
+  use_morphology: true
+  morphology_kernel: 3
+  
+  # Output
+  output_format: "numpy"  # numpy, torch, pil
+  return_probabilities: false
+  apply_colormap: true
+
+# API Settings (if using web interface)
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  debug: false
+  log_level: "info"
+
+# Export Settings
+export:
+  formats: ["torchscript", "onnx"]
+  opset_version: 13
+  dynamic_axes: true

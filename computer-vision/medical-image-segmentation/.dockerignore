@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+.venv
+.env
+
+# Build and distribution
+build
+dist
+*.egg
+*.egg-info
+.cache
+
+# Documentation
+docs/_build
+.coverage
+htmlcov
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs
+
+# Data (large files)
+data/raw
+data/processed/*.h5
+data/processed/*.npy
+
+# Models (can be mounted as volumes)
+checkpoints/*.pth
+outputs/*.pth
+
+# MLflow
+mlruns

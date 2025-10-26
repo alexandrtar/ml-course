@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  training:
+    build: .
+    container_name: medical_segmentation_training
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./checkpoints:/app/checkpoints
+      - ./logs:/app/logs
+      - ./mlruns:/app/mlruns
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: python scripts/train.py --config config/training_config.yaml
+    profiles: ["training"]
+
+  api:
+    build: .
+    container_name: medical_segmentation_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./checkpoints:/app/checkpoints
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - MODEL_PATH=/app/checkpoints/best_model.pth
+    command: python inference/api.py --host 0.0.0.0 --port 8000
+    profiles: ["api"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mlflow:
+    build: .
+    container_name: mlflow_tracking
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/app/mlruns
+    environment:
+      - MLFLOW_TRACKING_URI=file:/app/mlruns
+    command: mlflow server --backend-store-uri /app/mlruns --host 0.0.0.0 --port 5000
+    profiles: ["mlflow"]
+
+  jupyter:
+    build: .
+    container_name: medical_segmentation_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+      - ./notebooks:/app/notebooks
+    environment:
+      - JUPYTER_TOKEN=medical_segmentation
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=medical_segmentation
+    profiles: ["jupyter"]
+
+volumes:
+  data:
+  outputs:
+  checkpoints:
+  logs:
+  mlruns:
+
+networks:
+  default:
+    name: medical_segmentation_network
