@@ -170,7 +170,7 @@ country_region - Регион страны (cis, europe, other)
 
 🛠️ Разработка
 Структура проекта:
-text
+```
 conversion-prediction-service/
 ├── 📁 models/           # Артефакты модели
 ├── 📁 notebooks/        # Jupyter ноутбуки анализа
@@ -179,6 +179,8 @@ conversion-prediction-service/
 ├── 📁 tests/           # Тесты
 ├── run_api.py          # Скрипт запуска
 └── requirements_simple.txt
+```
+
 Добавление новых фич:
 Обновите feature engineering в 02_feature_engineering.ipynb
 
