@@ -21,9 +21,11 @@
 🟢 Deep Learning for Fashion-MNIST - From linear models to multi-layer perceptrons on fashion dataset
 
 🟢 YOLO for Human Instance Segmentation - Advanced segmentation projects
+
 🏆 Key Achievement: Real-time human instance segmentation with YOLOv8 achieving 86.8% detection confidence and 43.8% mask coverage
 
 🟢 **UNet for Medical Image Segmentation** - Production-ready medical segmentation system with synthetic data generation, comprehensive training pipeline, and MLOps practices
+
 🏆 **Key Achievement**: Medical image segmentation with UNet achieving 0.78+ Dice coefficient and full production deployment capabilities
 
 🟢 Transfer Learning Benchmark for Car Classification - ResNet fine-tuning vs custom CNN comparative analysis
