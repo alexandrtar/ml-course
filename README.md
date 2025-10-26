@@ -1,32 +1,47 @@
 🎯 ML Course - Production Machine Learning Projects
-Коллекция продвинутых проектов по машинному обучению с фокусом на production-реализацию и MLOps практики.
 ===
+
+Коллекция продвинутых проектов по машинному обучению с фокусом на production-реализацию и MLOps практики.
+
+---
+
 🏆 Projects Portfolio
 ---
+
 🤖 Reinforcement Learning
 ---
+
 🟢 Mastering Taxi-v3 with Advanced Q-Learning - Reinforcement learning agent with intelligent exploration strategies
 
 ---
+
 👁️ Computer Vision
 ---
+
 🟢 Deep Learning for Fashion-MNIST - From linear models to multi-layer perceptrons on fashion dataset
 
-🟢 UNet for Medical Segmentation & YOLO for Human Instance Segmentation - Advanced segmentation projects
-
+🟢 YOLO for Human Instance Segmentation - Advanced segmentation projects
 🏆 Key Achievement: Real-time human instance segmentation with YOLOv8 achieving 86.8% detection confidence and 43.8% mask coverage
+
+🟢 **UNet for Medical Image Segmentation** - Production-ready medical segmentation system with synthetic data generation, comprehensive training pipeline, and MLOps practices
+🏆 **Key Achievement**: Medical image segmentation with UNet achieving 0.78+ Dice coefficient and full production deployment capabilities
 
 🟢 Transfer Learning Benchmark for Car Classification - ResNet fine-tuning vs custom CNN comparative analysis
 
 🟢 Generative AI: GANs vs VAEs for Face Generation - Comparative study of generative models
 
 ---
+
 📊 Natural Language Processing
 ---
+
 🟢 Hybrid BiLSTM-Transformer for Movie Genre Classification - Advanced architecture for multi-label classification
+
 ---
+
 🚀 MLOps & Engineering
 ---
+
 🟢 End-to-End ML Pipeline: Conversion Prediction Service - Production-ready service with FastAPI deployment
 
 🟢 YOLO Human Instance Segmentation on COCO - Real-time segmentation pipeline with comprehensive evaluation
@@ -35,31 +50,40 @@
 
 🔴 Scalable Model Serving with CI/CD - Planned: Microservices, auto-scaling, monitoring
 
+---
+
 💡 Multi-Modal & Business Applications
 ---
+
 🟢 Multi-Modal Product Success Prediction - Combining visual embeddings and tabular features
 
 🔴 Real-Time Recommendation with Spark Streaming - Planned: PySpark, streaming architecture
 
 🔴 Time Series Forecasting for Energy Demand - Planned: SARIMAX, Prophet, LSTM ensembles
 
+---
+
 🏆 Key Results & Metrics
 ===
 
 Computer Vision
 ---
+
 * Car Classification: 99.38% accuracy, ResNet18 fine-tuning
 
-* Medical Segmentation: 0.92 Dice coefficient, UNet architecture
+* Medical Segmentation: 0.78+ Dice coefficient, UNet architecture with 31M parameters, synthetic data generation
 
 * Human Instance Segmentation: 86.8% detection confidence, 43.8% mask coverage, YOLOv8 on COCO
 
 * Face Generation: 28.4 FID score, GAN vs VAE comparison
 
 * Fashion-MNIST: 92.1% accuracy with custom CNN
+  
+---
 
 NLP & Multi-Modal
 ---
+
 * Movie Genre Classification: 0.87 F1-score, BiLSTM-Transformer hybrid
 
 * Product Success Prediction: 0.89 ROC-AUC, visual + tabular features
@@ -160,6 +184,8 @@ Code Quality
 * Modular Design: Separation of data, models, training, and evaluation
 
 * Configuration Management: YAML-based experiment configuration
+  
+* Medical Imaging: Synthetic data generation, UNet architecture, Dice coefficient optimization
 
 * Reproducibility: Seed control, experiment tracking, versioning
 
@@ -370,7 +396,7 @@ ml-course/
 ├── 📁 computer-vision/                   # CV projects
 │   ├── 📁 human-segmentation-coco/      # YOLO Instance Segmentation
 │   ├── 📁 car-classification/           # Transfer Learning
-│   ├── 📁 medical-segmentation/         # UNet Medical Imaging
+│   ├── 📁 medical-image-segmentation/    # Production UNet Medical Segmentation
 │   └── 📁 generative-ai/                # GANs & VAEs
 ├── 📁 nlp-text-mining/                  # NLP projects  
 ├── 📁 reinforcement-learning/           # RL projects
