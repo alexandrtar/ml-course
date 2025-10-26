@@ -20,7 +20,9 @@ A production-ready system for medical image segmentation using UNet architecture
 ---
 📊 Performance Metrics
 ===
+
 | Metric |	Value |
+| --- | ---- |
 | Dice Coefficient	| 0.7811 |
 | IoU Score	| 0.9147 |
 | Inference Speed |	~15ms/image |
