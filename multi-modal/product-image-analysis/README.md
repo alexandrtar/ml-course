@@ -1,12 +1,10 @@
 # 🎯 Multi-Modal Product Success Prediction
-===
 
 Production-ready machine learning system for predicting product success using both product metadata and visual features. The system combines tabular data with image embeddings to provide accurate success probability predictions.
 
 ---
 
 ## 🚀 Features
-===
 
 - **Multi-Modal Architecture**: Combines product metadata with visual features
 - **Production API**: FastAPI with automatic Swagger documentation
@@ -17,7 +15,6 @@ Production-ready machine learning system for predicting product success using bo
 ---
 
 ## 📊 Model Performance
-===
 
 | Metric | Score |
 |--------|-------|
@@ -29,7 +26,7 @@ Production-ready machine learning system for predicting product success using bo
 ---
 
 ## 🏗️ System Architecture
-===
+
 Data Input → Feature Engineering → Multi-Modal Model → API Service → Prediction
 ↓ ↓ ↓ ↓ ↓
 Product Tabular + RandomForest FastAPI Success
@@ -57,7 +54,6 @@ product-image-analysis/
 ```
 
 ## 🛠️ Installation
-===
 
 ### Prerequisites
 - Python 3.8+
