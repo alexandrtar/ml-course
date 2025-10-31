@@ -1,8 +1,12 @@
 # 🎯 Multi-Modal Product Success Prediction
+===
 
 Production-ready machine learning system for predicting product success using both product metadata and visual features. The system combines tabular data with image embeddings to provide accurate success probability predictions.
 
+---
+
 ## 🚀 Features
+===
 
 - **Multi-Modal Architecture**: Combines product metadata with visual features
 - **Production API**: FastAPI with automatic Swagger documentation
@@ -10,7 +14,10 @@ Production-ready machine learning system for predicting product success using bo
 - **Real-time Predictions**: REST API for instant product analysis
 - **Feature Importance**: Explainable AI with feature analysis
 
+---
+
 ## 📊 Model Performance
+===
 
 | Metric | Score |
 |--------|-------|
@@ -19,7 +26,10 @@ Production-ready machine learning system for predicting product success using bo
 | Accuracy | 0.65 |
 | Feature Count | 50 |
 
+---
+
 ## 🏗️ System Architecture
+===
 Data Input → Feature Engineering → Multi-Modal Model → API Service → Prediction
 ↓ ↓ ↓ ↓ ↓
 Product Tabular + RandomForest FastAPI Success
@@ -47,10 +57,13 @@ product-image-analysis/
 ```
 
 ## 🛠️ Installation
+===
 
 ### Prerequisites
 - Python 3.8+
 - pip
+  
+---
 
 ### Setup
 ```
@@ -64,9 +77,14 @@ source env/bin/activate  # On Windows: env\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+```
+---
+
 🚀 Quick Start
+===
+
 1. Start the API Server
-```bash```
+```
 python run_server.py
 2. Test the API (in another terminal)
 ```bash```
@@ -78,9 +96,15 @@ API Documentation: http://localhost:8000/docs
 
 Health Check: http://localhost:8000/health
 
+```
+
+---
+
 📚 API Endpoints
+===
+
 🔍 Health Check
-```http```
+```
 GET /health
 Response:
 
@@ -95,18 +119,32 @@ Response:
     "feature_count": 50
   }
 }
+```
+---
+
 🤖 Model Information
-```http```
+===
+
+```
 GET /model/info
 Returns model specifications and configuration.
+```
+
+---
 
 📊 Model Metrics
-```http```
+===
+
+```
 GET /model/metrics
 Returns performance metrics and evaluation results.
+```
+---
 
 🎯 Make Prediction
-```http```
+===
+
+```
 POST /predict
 Request:
 
@@ -126,9 +164,10 @@ Request:
   },
   "image_url": ""
 }
+```
 Response:
 
-```json```
+```
 {
   "product_id": 1,
   "success_probability": 0.475,
@@ -136,20 +175,34 @@ Response:
   "confidence": 0.525,
   "message": "📈 Close to success. Minor optimizations could help."
 }
+```
+
+---
+
 📈 Feature Importance
-```http```
+===
+
+```
 GET /features/importance
 Returns top 10 most important features for model predictions.
+```
+
+---
 
 🧪 Testing
+===
+
 Run Complete Test Suite
-```bash```
+```
 python test_final.py
+
+```
 Manual Testing with curl
-```bash```
+```
 # Health check
 curl http://localhost:8000/health
-
+```
+```
 # Make prediction
 curl -X POST "http://localhost:8000/predict" \
      -H "Content-Type: application/json" \
@@ -168,46 +221,65 @@ curl -X POST "http://localhost:8000/predict" \
        },
        "image_url": ""
      }'
+```
+
+---
+
 🔧 Technical Details
+===
+
 Model Architecture
-Algorithm: Random Forest Classifier
 
-Features: 50 total (22 tabular + 28 visual embeddings)
+* Algorithm: Random Forest Classifier
 
-Training: Balanced with SMOTE, cross-validated
+* Features: 50 total (22 tabular + 28 visual embeddings)
+
+* Training: Balanced with SMOTE, cross-validated
+
+---
 
 Feature Engineering
-Tabular Features: One-hot encoded categorical variables
 
-Visual Features: ResNet50 embeddings (reduced dimensionality)
+* Tabular Features: One-hot encoded categorical variables
 
-Feature Selection: Top 50 most important features selected
+* Visual Features: ResNet50 embeddings (reduced dimensionality)
+
+* Feature Selection: Top 50 most important features selected
+
+---
 
 Key Features
+
 The model considers:
 
-Product categories and types
+* Product categories and types
 
-Color and seasonal information
+* Color and seasonal information
 
-Usage patterns and demographics
+* Usage patterns and demographics
 
-Visual characteristics from product images
+* Visual characteristics from product images
 
 📊 Feature Importance
+===
+
 Top 5 most influential features:
 
-emb_25 - Visual embedding feature (7.7%)
+* emb_25 - Visual embedding feature (7.7%)
 
-emb_18 - Visual embedding feature (6.8%)
+* emb_18 - Visual embedding feature (6.8%)
 
-emb_12 - Visual embedding feature (6.0%)
+* emb_12 - Visual embedding feature (6.0%)
 
-emb_5 - Visual embedding feature (5.1%)
+* emb_5 - Visual embedding feature (5.1%)
 
-articleType_Shoes - Product type feature (3.0%)
+* articleType_Shoes - Product type feature (3.0%)
+
+---
 
 🎯 Business Applications
+===
+
 E-commerce: Predict product performance before launch
 
 Inventory Management: Optimize stock based on predicted success
@@ -216,15 +288,26 @@ Marketing: Target promotions for high-potential products
 
 Product Development: Identify successful product characteristics
 
+---
+
 🔮 Prediction Interpretation
-Probability Range	Interpretation	Recommendation
-> 80%	🎉 Excellent	High confidence in success
-60-80%	✅ Good	Likely to perform well
-40-60%	📊 Fair	Needs minor optimizations
-20-40%	📉 Below Average	Significant improvements needed
-< 20%	⚠️ Low	Major changes recommended
+===
+
+| Probability Range | Interpretation | Recommendation |
+|--------|-------|-------|
+| > 80% | 🎉 Excellent | confidence in success |
+| 60-80% | ✅ High | Likely to perform well |
+| 40-60% | 📊 Good| Fair	Needs minor optimizations |
+| 20-40% | 📉 Below | Average	Significant improvements needed |
+| < 20% | ⚠️ Low | Major changes recommended |
+
+---
+
 🛠️ Development
+===
+
 Adding New Features
+
 Update feature engineering in training pipeline
 
 Retrain model with new features
@@ -233,16 +316,33 @@ Update feature_names.txt with new feature names
 
 Deploy updated model
 
+---
+
 Model Retraining
+
 The model can be retrained with new data by running the training pipeline and updating the model files in models_improved/.
 
+---
+
 📝 License
+===
+
 MIT License - feel free to use this project for learning and development purposes.
 
+---
+
 🤝 Contributing
+===
+
 Contributions are welcome! Please feel free to submit pull requests or open issues for improvements.
 
+---
+
 📞 Support
+===
+
 For questions or support, please contact the development team or open an issue in the repository.
 
-Built with ❤️ using FastAPI, Scikit-learn, and PyTorch
+---
+
+**Built with ❤️ using FastAPI, Scikit-learn, and PyTorch**
