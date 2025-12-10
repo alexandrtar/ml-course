@@ -1,0 +1,178 @@
+import numpy as np
+from typing import List, Dict, Any
+import logging
+from ..models.gan_model import GANModel
+from ..models.vae_model_fixed import VAEModel
+from ..models.fallback_vae import FallbackVAEModel
+from ..config.settings import settings
+from .image_utils import ImageUtils
+
+logger = logging.getLogger(__name__)
+
+class GenerationService:
+    def __init__(self):
+        self.gan_model = None
+        self.vae_model = None
+        self.load_models()
+    
+    def load_models(self):
+        """Загрузка всех моделей"""
+        try:
+            # Загрузка GAN
+            if settings.GAN_GENERATOR_PATH.exists():
+                self.gan_model = GANModel(
+                    str(settings.GAN_GENERATOR_PATH),
+                    settings.GAN_LATENT_DIM,
+                    settings.IMAGE_SIZE
+                )
+                logger.info("GAN модель успешно загружена")
+            else:
+                logger.warning("GAN модель не найдена. Необходимо обучить модель.")
+            
+            # Загрузка VAE
+            if settings.VAE_DECODER_PATH.exists() and settings.VAE_ENCODER_PATH.exists():
+                try:
+                    logger.info(f"Попытка загрузки VAE моделей...")
+                    self.vae_model = VAEModel(
+                        str(settings.VAE_ENCODER_PATH),
+                        str(settings.VAE_DECODER_PATH),
+                        settings.VAE_LATENT_DIM,
+                        settings.IMAGE_SIZE
+                    )
+                    
+                    # Проверяем, загрузилась ли модель
+                    if self.vae_model and self.vae_model.is_loaded:
+                        logger.info("✅ VAE модель успешно загружена")
+                    else:
+                        logger.warning("VAE модель не загрузилась. Использую резервную модель.")
+                        self.vae_model = FallbackVAEModel(
+                            settings.VAE_LATENT_DIM,
+                            settings.IMAGE_SIZE
+                        )
+                        
+                except Exception as e:
+                    logger.error(f"Ошибка загрузки VAE модели: {e}")
+                    logger.info("Использую резервную VAE модель")
+                    self.vae_model = FallbackVAEModel(
+                        settings.VAE_LATENT_DIM,
+                        settings.IMAGE_SIZE
+                    )
+            else:
+                logger.warning("VAE модель не найдена. Использую резервную модель.")
+                self.vae_model = FallbackVAEModel(
+                    settings.VAE_LATENT_DIM,
+                    settings.IMAGE_SIZE
+                )
+            
+        except Exception as e:
+            logger.error(f"Ошибка загрузки моделей: {e}")
+    
+    def generate_images(self, model_type: str, num_images: int = 1, latent_vector: List[float] = None):
+        """Генерация изображений"""
+        model = self._get_model(model_type)
+        
+        # Конвертация latent_vector в numpy array если предоставлен
+        latent_np = None
+        if latent_vector is not None:
+            latent_np = np.array(latent_vector)
+            # Если передан один вектор, создаем batch
+            if latent_np.ndim == 1:
+                # ПРОВЕРЯЕМ длину вектора
+                if len(latent_np) == model.latent_dim:
+                    latent_np = latent_np.reshape(1, -1)
+                else:
+                    # Если вектор не правильной длины, игнорируем его
+                    logger.warning(f"Неверная длина латентного вектора. Ожидается {model.latent_dim}, получено {len(latent_np)}. Использую случайный вектор.")
+                    latent_np = None
+            
+            # Дополнительная проверка для batch
+            if latent_np is not None and latent_np.shape[1] != model.latent_dim:
+                logger.warning(f"Неверная размерность латентного вектора. Ожидается {model.latent_dim}, получено {latent_np.shape[1]}. Использую случайный вектор.")
+                latent_np = None
+        
+        # Если latent_vector не предоставлен или он неверной длины, генерируем случайный
+        if latent_np is None:
+            latent_np = model.generate_latent_vector(num_images)
+        
+        generated_images = model.generate(num_images, latent_np)
+        
+        # Конвертация в base64
+        results = []
+        for i, img in enumerate(generated_images):
+            img_base64 = ImageUtils.numpy_to_base64(img)
+            results.append({
+                "image_id": i,
+                "image": f"data:image/png;base64,{img_base64}",
+                "shape": list(img.shape)
+            })
+        
+        return results
+    
+    def interpolate_images(self, model_type: str, start_vector: List[float] = None, 
+                          end_vector: List[float] = None, steps: int = 10):
+        """Интерполяция между двумя точками"""
+        model = self._get_model(model_type)
+        
+        # Генерация случайных векторов если не предоставлены
+        if start_vector is None:
+            start_vector = model.generate_latent_vector(1)[0].tolist()
+        if end_vector is None:
+            end_vector = model.generate_latent_vector(1)[0].tolist()
+        
+        start_np = np.array(start_vector).reshape(1, -1)
+        end_np = np.array(end_vector).reshape(1, -1)
+        
+        interpolated_images = model.interpolate(start_np, end_np, steps)
+        
+        # Создание сетки интерполяций
+        grid = ImageUtils.create_image_grid(interpolated_images, cols=steps)
+        grid_base64 = ImageUtils.numpy_to_base64(grid)
+        
+        return {
+            "interpolation_grid": f"data:image/png;base64,{grid_base64}",
+            "start_vector": start_vector,
+            "end_vector": end_vector,
+            "steps": steps
+        }
+    
+    def get_model_info(self, model_type: str = None) -> Dict[str, Any]:
+        """Получение информации о моделях"""
+        info = {}
+        
+        if model_type is None or model_type == "gan":
+            if self.gan_model and self.gan_model.is_loaded:
+                info["gan"] = {
+                    "latent_dim": self.gan_model.latent_dim,
+                    "image_size": list(self.gan_model.image_size),
+                    "status": "loaded"
+                }
+            else:
+                info["gan"] = {"status": "not_trained"}
+        
+        if model_type is None or model_type == "vae":
+            if self.vae_model and self.vae_model.is_loaded:
+                info["vae"] = {
+                    "latent_dim": self.vae_model.latent_dim,
+                    "image_size": list(self.vae_model.image_size),
+                    "status": "loaded"
+                }
+            else:
+                info["vae"] = {"status": "not_trained"}
+        
+        return info
+    
+    def _get_model(self, model_type: str):
+        """Получение модели по типу"""
+        if model_type == "gan":
+            if not self.gan_model or not self.gan_model.is_loaded:
+                raise ValueError("GAN модель не обучена. Сначала обучите модель через /train/gan")
+            return self.gan_model
+        elif model_type == "vae":
+            if not self.vae_model or not self.vae_model.is_loaded:
+                raise ValueError("VAE модель не обучена. Сначала обучите модель через /train/vae")
+            return self.vae_model
+        else:
+            raise ValueError(f"Неизвестный тип модели: {model_type}")
+
+# Глобальный экземпляр сервиса
+generation_service = GenerationService()

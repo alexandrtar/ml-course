@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Generation API</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Face Generation API</h1>
+            <p>Generate realistic faces using GAN and VAE models</p>
+        </header>
+
+        <div class="models-status">
+            <h3>Models Status:</h3>
+            <div id="modelsStatus">Loading...</div>
+        </div>
+
+        <div class="generation-section">
+            <h2>Generate Single Face</h2>
+            <form id="generateForm">
+                <div class="form-group">
+                    <label for="modelType">Model Type:</label>
+                    <select id="modelType" name="modelType">
+                        <option value="gan">GAN</option>
+                        <option value="vae">VAE</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numImages">Number of Images (max 25):</label>
+                    <input type="number" id="numImages" name="numImages" value="1" min="1" max="25">
+                </div>
+                
+                <button type="submit">Generate Faces</button>
+            </form>
+            
+            <div id="singleResults" class="results"></div>
+        </div>
+
+        <div class="grid-section">
+            <h2>Generate Grid</h2>
+            <form id="gridForm">
+                <div class="form-group">
+                    <label for="gridModelType">Model Type:</label>
+                    <select id="gridModelType" name="modelType">
+                        <option value="gan">GAN</option>
+                        <option value="vae">VAE</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gridSize">Grid Size (max 8):</label>
+                    <input type="number" id="gridSize" name="gridSize" value="5" min="2" max="8">
+                </div>
+                
+                <button type="submit">Generate Grid</button>
+            </form>
+            
+            <div id="gridResults" class="results"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
